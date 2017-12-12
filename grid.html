@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+    .pink {
+        background:pink;
+        border:1px solid purple;
+    }
+    .orange {
+        background: orange;
+        border: 1px dashed red;
+    }
+    .alto {
+        height: 100px;
+        background: #f3f3f6;
+        border: 1px solid blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-lg-2 col-md-4 pink">COL LG 2</div>    
+            <div class="col-lg-8 col-md-12 pink">COL LG 8</div>    
+            <div class="col-lg-2 col-md-4 pink">COL LG 2</div>    
+        </div>  -->
+        <div class="row">
+            <div class="col-md-3 col-sm-6  pink">
+                <div class="row">
+                     <div class="col-lg-6 orange">1ST HALFWAY</div>       
+                     <div class="col-lg-6 orange">2ND HALFWAY</div>       
+                </div>       
+            </div>      
+            <div class="col-md-3 col-sm-6  pink">
+                <div class="row">
+                    <div class="col-md-3 alto"></div>    
+                    <div class="col-md-3 alto"></div>    
+                    <div class="col-md-3 alto"></div>    
+                    <div class="col-md-3 alto"></div>    
+                </div>    
+            </div>    
+            <div class="col-md-3 col-sm-6  pink">COL LG 4</div>       
+            <div class="col-md-3 col-sm-6  pink">COL LG 4</div>       
+        </div>   
+    </div>    
+</body>
+</html>
