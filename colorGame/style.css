@@ -37,3 +37,7 @@ h1 {
 .hide {
     display:none;
 }
+
+.square {
+    border-radius: 20px;
+}
