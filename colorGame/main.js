@@ -15,7 +15,7 @@ colorDisplay.textContent = pickedColor;
 resetButton.addEventListener("click",function(){
     messageDisplay.textContent = "";
     resetButton.textContent = "Nuevos colores";
-    h1.style.backgroundColor = "#232323";
+    h1.style.backgroundColor = "steelblue";
     colors = easyMode?generateRandomColors(3):generateRandomColors(6);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
