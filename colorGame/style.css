@@ -1,10 +1,19 @@
 body {
     background-color: #232323;
+    margin: 0;
+    font-family: "Lato," sans-serif;
 }
+ 
 h1 {
+    background-color: steelblue;
     color:white;
+    text-align: center;
+    margin:0;
+    font-weight: normal;
 }
-
+#colorDisplay {
+    text-transform: uppercase;
+}
 .square {
     width: 30%;
     background:purple;
