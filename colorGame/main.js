@@ -1,6 +1,6 @@
 var colors = generateRandomColors(6);
-var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
+var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
@@ -11,6 +11,9 @@ var botSquares = document.querySelectorAll(".bot");
 var easyMode = false;
 colorDisplay.textContent = pickedColor;
 
+// asignar 6 colores a los cuadros
+giveColors();   
+
 // reset button
 resetButton.addEventListener("click",function(){
     messageDisplay.textContent = "";
@@ -20,7 +23,6 @@ resetButton.addEventListener("click",function(){
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
     giveColors();
-    
 });
 
 // easy button
@@ -37,6 +39,7 @@ easyButton.addEventListener("click", function(){
     giveColors();
     
 });
+// hard button
 hardButton.addEventListener("click", function(){
     easyMode = false;
     this.classList.add("selected");
@@ -49,20 +52,15 @@ hardButton.addEventListener("click", function(){
     colorDisplay.textContent = pickedColor;
     giveColors();
 });
-// asignar 6 colores a los cuadros
-giveColors();
 
-// cambia cada box al color elegido
+// cambia todos los squares al color elegido cuando se gana
 function changeColors (color) {
     for(var i = 0; i <squares.length;i++){
         squares[i].style.backgroundColor = color;
     }
 }   
-// random color 
-function pickColor() {
-    return colors[Math.floor(Math.random()*colors.length)];
-}
-// crear 6 colores random
+
+// crea 6 colores random
 function generateRandomColors(num){
     var arr = [];
     for(var i = 0; i <num;i++){
@@ -71,15 +69,22 @@ function generateRandomColors(num){
     return arr;
 }
 
+// elige un color entre los 6 o 3 colores al azar
+function pickColor() {
+    return colors[Math.floor(Math.random()*colors.length)];
+}
+
+// returns una string con un color en formato rgb("255, 255, 255")
 function randomColor() { 
     var str= "rgb("+randomRGB() + ", " + randomRGB()+ ", " + randomRGB()+")";
     return str;
 }
-
+// genera un numero entre 0 y 255
 function randomRGB(){
    return Math.floor(Math.random()*256)
 }
 
+// añade listeners y colores a cada square
 function giveColors(){
     for(var i = 0; i <squares.length;i++){ 
         // añadir colores 
@@ -89,13 +94,13 @@ function giveColors(){
             var clickedColor = this.style.backgroundColor;;
             // respuesta correcta
             if(clickedColor === pickedColor){
-                messageDisplay.textContent = "Respuesta correcta"
+                messageDisplay.textContent = "Respuesta correcta!"
                 changeColors(clickedColor);
                 h1.style.backgroundColor = clickedColor;
                 resetButton.textContent = "Jugar de nuevo?"
             }else {
                 this.style.backgroundColor = "#232323";
-                messageDisplay.textContent = "Intentalo de nuevo"
+                messageDisplay.textContent = "Inténtalo de nuevo"
             }
         });
     }
